@@ -1,0 +1,8 @@
+#!/usr/local/bin/ruby
+connection_uri = ENV['CONNECTION_URI']
+script_path = ENV['SCRIPT_PATH'] || 'redash_upgrade_script'
+
+puts 'Upgrading Redash'
+
+`ssh vagrant@10.0.0.10 'bash -s' < #{script_path} `
+puts 'Upgraded'
